@@ -49,6 +49,9 @@ const elements = {
 // Initialize Application
 // ============================================
 async function init() {
+    // Reset scroll position on load
+    window.scrollTo(0, 0);
+
     try {
         await loadCertificates();
         setupEventListeners();
@@ -307,6 +310,10 @@ function displayVerifiedResult(certificate) {
                 </button>
             </div>
         </div>
+        
+        <button type="button" class="verify-another-btn" onclick="resetVerification()">
+            Verify Another Certificate
+        </button>
     `;
 }
 
@@ -335,16 +342,59 @@ function displayNotFoundResult(certId) {
                 <li>Contact the organizer if you believe this is an error</li>
             </ul>
         </div>
+        
+        <button type="button" class="verify-another-btn" onclick="resetVerification()">
+            Try Again
+        </button>
     `;
 }
 
 function showError(message) {
-    alert(message); // Simple error display - can be enhanced with toast notifications
+    showToast(message, 'error');
 }
 
 // ============================================
 // Utility Functions
 // ============================================
+function showToast(message, type = 'info') {
+    const container = document.getElementById('toastContainer');
+    
+    // Create container if it doesn't exist (safety check)
+    if (!container) return alert(message);
+
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+    
+    // Choose icon
+    let icon = 'ℹ️';
+    if (type === 'success') icon = '✅';
+    if (type === 'error') icon = '⚠️';
+
+    toast.innerHTML = `
+        <div class="toast-icon">${icon}</div>
+        <div class="toast-message">${message}</div>
+    `;
+
+    container.appendChild(toast);
+
+    // Auto remove
+    setTimeout(() => {
+        toast.classList.add('hiding');
+        toast.addEventListener('transitionend', () => {
+            toast.remove();
+        });
+    }, 4000);
+}
+
+function resetVerification() {
+    elements.idInput.value = '';
+    hideResult();
+    elements.form.style.display = 'flex';
+    elements.resultSection.classList.add('hidden');
+    elements.idInput.focus();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 function escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
@@ -357,8 +407,11 @@ function delay(ms) {
 
 function copyToClipboard(text) {
     navigator.clipboard.writeText(text).then(() => {
+        showToast('Link copied to clipboard!', 'success');
         const btn = document.querySelector('.copy-btn');
         const originalText = btn.textContent;
+        
+        // Visual feedback on button too
         btn.textContent = '✓ Copied!';
         btn.style.background = '#10B981';
         setTimeout(() => {
@@ -367,6 +420,7 @@ function copyToClipboard(text) {
         }, 2000);
     }).catch(err => {
         console.error('Failed to copy:', err);
+        showToast('Failed to copy link', 'error');
     });
 }
 
