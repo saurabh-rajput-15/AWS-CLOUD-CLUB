@@ -101,6 +101,9 @@ function checkUrlParams() {
                 elements.form.dispatchEvent(new Event('submit'));
             }, 500);
         }
+
+        // Clean URL so refresh goes to base
+        window.history.replaceState({}, document.title, window.location.pathname);
     }
 }
 
@@ -195,7 +198,7 @@ async function handleFormSubmit(e) {
     displayResult(result, certId);
     
     // Update URL with certificate ID (for sharing)
-    updateUrlWithCertId(certId);
+    // updateUrlWithCertId(certId);
 }
 
 /**
