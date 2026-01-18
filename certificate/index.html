@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Verify your AWS Cloud Club certificate authenticity. Official certificate verification portal for SVKM's Institute of Technology, Dhule."
+    />
+    <meta
+      name="keywords"
+      content="AWS Cloud Club, Certificate Verification, SVKM, Dhule, Cloud Computing"
+    />
+    <meta name="author" content="AWS Cloud Club - SVKM's IoT Dhule" />
+
+    <title>Certificate Verification | AWS Cloud Club - SVKM's IoT Dhule</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Decorative Background Elements -->
+    <div class="bg-decoration">
+      <div class="cloud cloud-1">☁️</div>
+      <div class="cloud cloud-2">☁️</div>
+      <div class="cloud cloud-3">⚡</div>
+      <div class="floating-icon icon-1">🔒</div>
+      <div class="floating-icon icon-2">🏆</div>
+      <div class="floating-icon icon-3">📜</div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+            <img src="./logo.png" height="100px" alt="AWS Cloud Club Logo" />
+          
+          <div class="logo-text">
+            <span class="logo-title">AWS Cloud Club</span>
+            <span class="logo-subtitle"
+              >SVKM's Institute of Technology, Dhule</span
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+          <div class="hero-badge">
+            <span class="badge-icon">🔐</span>
+            <span>Official Verification Portal</span>
+          </div>
+          <h1 class="hero-title">Certificate Verification</h1>
+          <p class="hero-description">
+            Verify the authenticity of certificates issued by AWS Cloud Club.
+            Enter your Certificate ID below to confirm your certificate.
+          </p>
+        </section>
+
+        <!-- Verification Form Card -->
+        <section class="verification-card">
+          <div class="card-header">
+            <div class="card-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 12l2 2 4-4"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c2.12 0 4.07.74 5.61 1.97"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+            <h2 class="card-title">Verify Your Certificate</h2>
+            <p class="card-subtitle">
+              Enter your Certificate ID to verify authenticity
+            </p>
+          </div>
+
+          <form id="verificationForm" class="verification-form">
+            <div class="form-group">
+              <label for="certificateId" class="form-label">
+                <span class="label-icon">🎫</span>
+                Certificate ID
+              </label>
+              <input
+                type="text"
+                id="certificateId"
+                name="certificateId"
+                class="form-input"
+                placeholder="e.g., AWS-17-JAN-26-CC-001"
+                required
+                autocomplete="off"
+              />
+              <span class="input-hint">Enter the Certificate ID from your certificate</span>
+            </div>
+
+            <button type="submit" id="verifyBtn" class="verify-btn">
+              <span class="btn-text">Verify Certificate</span>
+              <span class="btn-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5 12h14M12 5l7 7-7 7"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </span>
+            </button>
+          </form>
+
+          <!-- Loading Spinner -->
+          <div id="loadingSpinner" class="loading-spinner hidden">
+            <div class="spinner"></div>
+            <p>Verifying certificate...</p>
+          </div>
+
+          <!-- Rate Limit Warning -->
+          <div id="rateLimitWarning" class="rate-limit-warning hidden">
+            <span class="warning-icon">⚠️</span>
+            <p>
+              Too many attempts. Please wait
+              <span id="cooldownTimer">60</span> seconds.
+            </p>
+          </div>
+        </section>
+
+        <!-- Result Section -->
+        <section id="resultSection" class="result-section hidden">
+          <div id="resultCard" class="result-card">
+            <!-- Dynamic content will be inserted here -->
+          </div>
+        </section>
+
+        <!-- Info Section -->
+        <section class="info-section">
+          <div class="info-card">
+            <div class="info-icon">ℹ️</div>
+            <div class="info-content">
+              <h3>How to Verify</h3>
+              <ol>
+                <li>Find the Certificate ID on your certificate (e.g., AWS-17-JAN-26-CC-001)</li>
+                <li>Enter the Certificate ID in the field above</li>
+                <li>Click "Verify Certificate" to confirm authenticity</li>
+              </ol>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <span class="footer-logo-icon"><img src="logo.png" height="100px" alt="AWS Cloud Club Logo" /></span>
+              <span>AWS Cloud Club</span>
+            </div>
+            <p class="footer-tagline">
+              Empowering students with cloud computing skills
+            </p>
+          </div>
+          <div class="footer-contact">
+            <p>Questions about your certificate?</p>
+            <a href="mailto:awscloudclub@svkm.edu" class="footer-email"
+              >awscloudclub@svkm.edu</a
+            >
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2026 AWS Cloud Club - SVKM's Institute of Technology, Dhule.
+            All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+  </body>
+</html>

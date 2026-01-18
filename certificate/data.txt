@@ -1,0 +1,31 @@
+data in json file "name 	certificate id
+Paridhi Rakesh kapadne	 AWS-17-JAN-26-CC-001
+Sachin Bapu Gawali 	 AWS-17-JAN-26-CC-002
+Devesh Dinesh Patil 	 AWS-17-JAN-26-CC-003
+Anushka Shashikant Dhawale 	 AWS-17-JAN-26-CC-004
+Prathmesh Pravin Bhadane 	 AWS-17-JAN-26-CC-005
+Rushikesh Nilesh Mali	 AWS-17-JAN-26-CC-006
+OM ADHAR PAWAR 	 AWS-17-JAN-26-CC-007
+Patil Harshada Jitendra 	 AWS-17-JAN-26-CC-008
+Nikita jagdish bhavsar	 AWS-17-JAN-26-CC-009
+Kaveri Hiralal Patil 	 AWS-17-JAN-26-CC-010
+NiKita Sunil Patil 	 AWS-17-JAN-26-CC-011
+Wagh Yash Tukaram 	 AWS-17-JAN-26-CC-012
+Bhavesh Gitesh Ahire 	 AWS-17-JAN-26-CC-013
+Ansari Mohammad Uzair Ansar Ahmad 	 AWS-17-JAN-26-CC-014
+Palak Manohar Panjwani 	 AWS-17-JAN-26-CC-015
+Piyush Vishwas Patil 	 AWS-17-JAN-26-CC-016
+YASH ANIL SONGIRE	 AWS-17-JAN-26-CC-017
+Patil Nandini Yogesh 	 AWS-17-JAN-26-CC-018
+Jayesh Nitin Bhagwat 	 AWS-17-JAN-26-CC-019
+Darshan Kishor wadile 	 AWS-17-JAN-26-CC-020
+Giriraj Anil Kale 	 AWS-17-JAN-26-CC-021
+Tejaswini Lotan Patil	 AWS-17-JAN-26-CC-022
+Pranjal Rajendra Bagad 	 AWS-17-JAN-26-CC-023
+KAUSHIK BHATU MANDALE	 AWS-17-JAN-26-CC-024
+Aarya Yajuvendra Patil 	 AWS-17-JAN-26-CC-025
+Sneha Sunil Mistry 	 AWS-17-JAN-26-CC-026
+Prem Manoj Gajare 	 AWS-17-JAN-26-CC-027
+Jay Manilal Ramani 	 AWS-17-JAN-26-CC-028
+om kothavade	 AWS-17-JAN-26-CC-029
+mahesh lakhesing girase	 AWS-17-JAN-26-CC-030"
